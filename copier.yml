@@ -11,7 +11,7 @@ project_type:
 
 data_project_dirs:
   type: bool
-  help: Do you want to create the standard data project directories (data, notebooks, scripts, tests)?
+  help: Do you want to create the standard data project directories (data, config)?
   default: true
   when: "{{ project_type == 'data project' }}"
 
@@ -42,7 +42,8 @@ project_description:
 project_url:
   type: str
   help: What is the URL of your project's repository?
-  placeholder: https://github.com/user/{{ project_type }}
+  default: "https://github.com/kenlhlui/{{ project_name | lower | replace(' ', '-') }}"
+  placeholder: https://github.com/kenlhlui/{{ project_type }}
   validator: >-
     {% if not project_url.startswith("https://") %}
     Invalid project URL
@@ -51,6 +52,11 @@ project_url:
 python_version:
   type: str
   help: "{% if project_type == 'app' %}Which Python version should your app use?{% else %}What is the minimum Python version your package should support?{% endif %}"
+  choices:
+    - "3.10"
+    - "3.11"
+    - "3.12"
+    - "3.13"
   default: "{% if project_type == 'app' %}3.13{% else %}3.12{% endif %}"
 
 ci:
@@ -76,7 +82,7 @@ version_scheme:
   choices:
     - pep440
     - semver
-    - pep440
+    - semver2
   default: pep440
 
 with_conventional_commits:
