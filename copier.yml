@@ -117,7 +117,7 @@ project_name_kebab_case:
 
 project_name_snake_case:
   when: false
-  default: "{{ project_name | lower | replace(' ', '_') }}"
+  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
 
 documentation_url:
   when: false
