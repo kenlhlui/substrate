@@ -2,11 +2,24 @@ _subdirectory: template
 
 project_type:
   type: str
-  help: Is this project a package or an app?
+  help: Is this project a package, an app or a data project?
   choices:
     - app
     - package
+    - data project
   default: package
+
+data_project_dirs:
+  type: bool
+  help: Do you want to create the standard data project directories (data, notebooks, scripts, tests)?
+  default: true
+  when: "{{ project_type == 'data project' }}"
+
+with_pypi_publish:
+  type: bool
+  help: Do you want to publish to PyPI?
+  default: true
+  when: "{{ project_type == 'package' }}"
 
 project_name:
   type: str
@@ -35,24 +48,6 @@ project_url:
     Invalid project URL
     {% endif %}
 
-author_name:
-  type: str
-  help: What is the name of your {{ project_type }}'s primary author?
-  placeholder: John Smith
-  validator: >-
-    {% if not author_name %}
-    Invalid author name
-    {% endif %}
-
-author_email:
-  type: str
-  help: What is the email address of your {{ project_type }}'s primary author?
-  placeholder: john@example.com
-  validator: >-
-    {% if not "@" in author_email %}
-    Invalid author email address
-    {% endif %}
-
 python_version:
   type: str
   help: "{% if project_type == 'app' %}Which Python version should your app use?{% else %}What is the minimum Python version your package should support?{% endif %}"
@@ -75,6 +70,15 @@ typing:
     - strict
   default: optional
 
+version_scheme:
+  type: str
+  help: Which versioning scheme do you want to use?
+  choices:
+    - pep440
+    - semver
+    - pep440
+  default: pep440
+
 with_conventional_commits:
   type: bool
   help: Do you want to follow the Conventional Commits standard (https://www.conventionalcommits.org) for your commit messages?
@@ -90,6 +94,16 @@ with_typer_cli:
   type: bool
   help: Does your {{ project_type }} need a Typer CLI?
   default: false
+
+with_pydantic:
+  type: bool
+  help: Does your {{ project_type }} need Pydantic for data validation?
+  default: true
+
+with_httpx2:
+  type: bool
+  help: Does your {{ project_type }} need HTTPX2 for making HTTP requests?
+  default: true
 
 project_name_kebab_case:
   when: false

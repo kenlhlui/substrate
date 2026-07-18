@@ -4,7 +4,7 @@ set -e
 
 rm -rf my-project
 
-project_types=("app" "package")
+project_types=("app" "package" "data project")
 typing_options=("optional" "strict")
 
 for project_type in "${project_types[@]}"; do
@@ -20,8 +20,9 @@ for project_type in "${project_types[@]}"; do
             --data author_email="john@example.com" \
             --data python_version="3.12" \
             --data typing="$typing" \
-            --data with_fastapi_api=true \
-            --data with_typer_cli="$([ "$project_type" == "app" ] && echo false || echo true)"
+            --data with_fastapi_api="$([ "$project_type" == "app" ] && echo true || echo false)" \
+            --data with_typer_cli="$([ "$project_type" == "package" ] && echo true || echo false)" \
+            --data data_project_dirs="$([ "$project_type" == "data project" ] && echo true || echo false)"
 
         cd my-project
         git config --global init.defaultBranch main
@@ -40,7 +41,7 @@ for project_type in "${project_types[@]}"; do
             docker compose build app
             docker compose up --detach app
             sleep 2
-            if ! curl -f 'http://localhost:8000/compute?n=8' > /dev/null; then
+            if ! curl -f 'http://localhost:9777/compute?n=8' > /dev/null; then
                 docker compose down
                 exit 1
             fi
