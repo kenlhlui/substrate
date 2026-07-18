@@ -1,3 +1,9 @@
+## v2.1.3 (2026-07-18)
+
+### Fix
+
+- path of the data project dirs
+
 ## v2.1.2 (2026-07-18)
 
 ### Fix
