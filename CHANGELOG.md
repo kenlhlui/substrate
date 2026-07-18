@@ -1,3 +1,10 @@
+## v2.2.0 (2026-07-18)
+
+### Fix
+
+- **copier**: replace hyphen names with project_name_snake_case (#2)
+- to add release.yml (bump) all the time
+
 ## v2.1.3 (2026-07-18)
 
 ### Fix
