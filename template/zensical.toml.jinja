@@ -1,0 +1,63 @@
+[project]
+site_name = "{{ project_name }}"
+site_description = "{{ project_description }}"
+site_author = "{{ author_name }}"
+site_url = "{{ documentation_url }}"
+repo_url = "{{ project_url }}"
+repo_name = "{{ project_url.rstrip('/').split('/')[-2:] | join('/') }}"
+copyright = "&copy; 2026 {{ author_name }}"
+{%- if typing == 'strict' %}
+strict = true
+{%- endif %}
+{%- if project_type == 'package' %}
+watch = ["src"]
+{%- endif %}
+nav = [
+  { Home = "index.md" },
+{%- if project_type == 'package' %}
+  { Reference = "reference.md" },
+{%- endif %}
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.superfences]
+
+{%- if typing == 'strict' %}
+
+[project.validation]
+omitted_files = "warn"
+absolute_links = "warn"
+unrecognized_links = "warn"
+anchors = "warn"
+{%- endif %}
+
+[project.theme]
+features = [
+    "search.highlight"
+]
+
+
+{%- if project_type == 'package' %}
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "numpy"
+{%- endif %}

@@ -21,7 +21,7 @@ A modern [Copier template](https://github.com/copier-org/copier) for scaffolding
 - ♻️ Continuous integration with [GitHub Actions](https://docs.github.com/en/actions) or [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 - 🧪 Test coverage with [Coverage.py](https://github.com/nedbat/coveragepy)
 - 🧰 Dependency updates with [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-- 📚 Documentation with [MkDocs](https://github.com/mkdocs/mkdocs)
+- 📚 Documentation with [zensical](https://zensical.org/)
 - 🤖 Built-in andrej-karpathy-skills [CLAUDE.md](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md) included
 
 ## ✨ Using
