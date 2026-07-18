@@ -1,3 +1,10 @@
+## v2.3.0 (2026-07-18)
+
+### Feat
+
+- add darkmode to doc site
+- replace mkdocs with zensical
+
 ## v2.2.1 (2026-07-18)
 
 ### Fix
