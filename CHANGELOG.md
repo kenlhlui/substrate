@@ -1,3 +1,9 @@
+## v2.2.1 (2026-07-18)
+
+### Fix
+
+- Make the default depend on project_type
+
 ## v2.2.0 (2026-07-18)
 
 ### Fix
