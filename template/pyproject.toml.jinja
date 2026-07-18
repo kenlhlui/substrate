@@ -8,7 +8,7 @@ version = "0.0.0"
 description = "{{ project_description }}"
 readme = "README.md"
 authors = [
-  { name = "{{ author_name }}", email = "{{ author_email }}" },
+  { name = "Ken Lui", email = "kenlhlui@utoronto.ca" },
 ]
 requires-python = ">={{ python_version }},<4.0"
 dependencies = [
@@ -21,6 +21,13 @@ dependencies = [
   {%- endif %}
   {%- if with_typer_cli %}
   "typer (>=0.15.1)",
+  {%- endif %}
+  {%- if with_pydantic %}
+  "pydantic (>=2.0.0)",
+  "pydantic-settings (>=2.0.0)",
+  {%- endif %}
+  {%- if with_httpx2 %}
+  "httpx2 (>=2.0.0)",
   {%- endif %}
 ]
 {%- if with_typer_cli %}
@@ -54,7 +61,7 @@ dev = [
   "mkdocstrings[python] (>=0.26.2)",
   "poethepoet (>=0.32.1)",
   {%- endif %}
-  "pre-commit (>=4.0.1)",
+  "prek",
   "pytest (>=8.3.4)",
   "pytest-mock (>=3.14.0)",
   "pytest-xdist (>=3.6.1)",
@@ -76,6 +83,7 @@ bump_message = "bump: v$current_version → v$new_version"
 tag_format = "v$version"
 update_changelog_on_bump = true
 version_provider = "uv"
+version_scheme = "{{ version_scheme }}"
 {%- endif %}
 
 [tool.coverage.report]  # https://coverage.readthedocs.io/en/latest/config.html#report
@@ -208,10 +216,10 @@ type = "simple"
     default = "0.0.0.0"
 
     [[tool.poe.tasks.serve.args]]
-    help = "Bind socket to this port (default: 8000)"
+    help = "Bind socket to this port (default: 9777)"
     name = "port"
     options = ["--port"]
-    default = "8000"
+    default = "9777"
 
     [[tool.poe.tasks.serve.args]]
     help = "Enable development mode"
@@ -230,7 +238,7 @@ type = "simple"
   [tool.poe.tasks.lint]
   help = "Lint this {{ project_type }}"
   cmd = """
-    pre-commit run
+    prek run
       --all-files
       --color always
     """
