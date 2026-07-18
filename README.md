@@ -4,7 +4,6 @@
 
 A modern [Copier template](https://github.com/copier-org/copier) for scaffolding Python packages and apps.
 
-<video src="https://github.com/user-attachments/assets/28d23137-ebae-47d8-a6e5-11f66abf2a91" controls preload></video>
 
 ## 🎁 Features
 
@@ -34,7 +33,7 @@ A modern [Copier template](https://github.com/copier-org/copier) for scaffolding
 To create a new Python project with this template, run:
 
 ```sh
-uvx copier copy gh:superlinear-ai/substrate path/to/local/repository
+uvx copier copy gh:kenlhlui/substrate path/to/local/repository
 ```
 
 ### Update your Python project
