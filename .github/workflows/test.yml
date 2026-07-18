@@ -26,7 +26,7 @@ jobs:
           path: substrate
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@v8.3.2
         with:
           enable-cache: true
           cache-dependency-glob: "**/uv.lock"
