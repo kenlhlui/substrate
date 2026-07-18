@@ -5,7 +5,6 @@ requires-python = ">=3.13,<3.14"
 dependencies = [
     "commitizen>=4.3.0",
     "copier>=9.4.1",
-    "pre-commit>=4.1.0",
     "ruff>=0.9.3",
     "ty>=0.0.6",
 ]
