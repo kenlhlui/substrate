@@ -1,3 +1,9 @@
+## v2.3.0 (2026-07-18)
+
+### Feat
+
+- replace mkdocs with zensical (#3)
+
 ## v2.2.1 (2026-07-18)
 
 ### Fix
