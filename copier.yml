@@ -17,8 +17,7 @@ data_project_dirs:
 
 with_pypi_publish:
   type: bool
-  help: Do you want to publish to PyPI?
-  default: true
+  default: "{{ project_type == 'package' }}"
   when: "{{ project_type == 'package' }}"
 
 project_name:
