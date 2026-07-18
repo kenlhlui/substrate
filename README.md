@@ -22,7 +22,7 @@ A modern [Copier template](https://github.com/copier-org/copier) for scaffolding
 - 🧪 Test coverage with [Coverage.py](https://github.com/nedbat/coveragepy)
 - 🧰 Dependency updates with [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
 - 📚 Documentation with [MkDocs](https://github.com/mkdocs/mkdocs)
-- 🤖 Built-in andrej-karpathy-skills [CLAUDE.md] included(https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md)
+- 🤖 Built-in andrej-karpathy-skills [CLAUDE.md](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md) included
 
 ## ✨ Using
 
