@@ -35,15 +35,15 @@ jobs:
           echo "new_version_tag=$(cz version -p --tag)" >> $GITHUB_OUTPUT
       - name: Build changelog for Release
         env:
-          NEW_VERSION: ${{ steps.get-version.outputs.new_version }}
-        # The following command might not be the best way to get the latest changelog. 
+          NEW_VERSION: {% raw %}${{{% endraw %} steps.get-version.outputs.new_version }}
+        # The following command might not be the best way to get the latest changelog.
         run: |
           awk '/^## /{c++} c==1' CHANGELOG.md > .changelog.md
       - name: GitHub Release
-        if: steps.get-version.outputs.new_version != ''
+        if: {% raw %}${{{% endraw %} steps.get-version.outputs.new_version != '' }}
         env:
-          GH_TOKEN: ${{ github.token }}
-          NEW_VERSION_TAG: ${{ steps.get-version.outputs.new_version_tag }}
+          GH_TOKEN: {% raw %}${{{% endraw %} github.token }}
+          NEW_VERSION_TAG: {% raw %}${{{% endraw %} steps.get-version.outputs.new_version_tag }}
         run: |
           gh release create "${NEW_VERSION_TAG}" --notes-file .changelog.md
 {% if with_pypi_publish %}
