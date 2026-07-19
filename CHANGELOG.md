@@ -1,3 +1,9 @@
+## v2.4.2 (2026-07-18)
+
+### Fix
+
+- mkdocstring in template/pyproject.toml.jinja
+
 ## v2.4.1 (2026-07-18)
 
 ### Fix
