@@ -14,7 +14,7 @@ watch = ["src"]
 {%- endif %}
 nav = [
   { Home = "index.md" },
-{%- if project_type == 'package' %}
+{%- if docs_with_reference == true %}
   { Reference = "reference.md" },
 {%- endif %}
 ]

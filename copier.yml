@@ -13,7 +13,6 @@ data_project_dirs:
   type: bool
   help: Do you want to create the standard data project directories (data, config)?
   default: true
-  when: "{{ project_type == 'data project' }}"
 
 with_pypi_publish:
   type: bool
@@ -109,6 +108,11 @@ with_httpx2:
   type: bool
   help: Does your {{ project_type }} need HTTPX2 for making HTTP requests?
   default: true
+
+docs_with_reference:
+  type: bool
+  help: Do you want the documentation site (zensical) to include a reference section for your {{ project_type }}'s API?
+  default: "{{ project_type in ['package', 'data project'] }}"
 
 project_name_kebab_case:
   when: false
