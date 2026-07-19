@@ -1,3 +1,9 @@
+## v2.4.1 (2026-07-18)
+
+### Fix
+
+- generating docstring
+
 ## v2.4.0 (2026-07-18)
 
 ### Feat
