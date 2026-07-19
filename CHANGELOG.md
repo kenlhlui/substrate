@@ -1,3 +1,9 @@
+## v2.4.0 (2026-07-18)
+
+### Feat
+
+- change to allow creation of data project dirs outside of data project and build docs with references in data project (#4)
+
 ## v2.3.0 (2026-07-18)
 
 ### Feat
