@@ -70,6 +70,9 @@ dev = [
   {%- if typing == 'strict' %}
   "typeguard (>=4.4.1)",
   {%- endif %}
+  {%- if docs_with_reference == true %}
+  "mkdocstrings-python (>=2.0.5)",
+  {%- endif %}
 ]
 
 [tool.codespell]  # https://github.com/codespell-project/codespell
