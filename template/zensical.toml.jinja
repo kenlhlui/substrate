@@ -56,8 +56,15 @@ features = [
 ]
 
 
-{%- if project_type == 'package' %}
+
+{%- if docs_with_reference == true %}
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src/{{ project_name_snake_case }}"]
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "numpy"
+inherited_members = true
+show_source = true
+show_submodules = true
 {%- endif %}
