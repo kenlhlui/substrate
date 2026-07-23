@@ -1,3 +1,13 @@
+## v2.5.0 (2026-07-23)
+
+### Feat
+
+- add choosing docstring convention
+- always install poethepoet and mkdocstrings[python]
+- update the build system
+- add Apache-2.0 & BSD text
+- add license option
+
 ## v2.4.2 (2026-07-18)
 
 ### Fix
