@@ -66,6 +66,15 @@ license:
     - BSD-3-Clause
   default: MIT
 
+pydocstyle:
+  type: str
+  help: Which pydocstyle convention do you want to use for your {{ project_type }}?
+  choices:
+    - numpy
+    - google
+    - pep257
+  default: google
+
 ci:
   type: str
   help: Which CI/CD provider would you like to use?

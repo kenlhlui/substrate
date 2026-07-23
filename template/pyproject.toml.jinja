@@ -145,8 +145,8 @@ split-on-trailing-comma = false
 [tool.ruff.lint.pycodestyle]
 max-doc-length = 100
 
-[tool.ruff.lint.pydocstyle]
-convention = "numpy"
+[tool.ruff.lint.pydocstyle]  https://docs.astral.sh/ruff/settings/#lintpydocstyle
+convention = "{{ pydocstyle_convention }}"
 {%- if project_type == 'package' %}
 
 [tool.ty.environment]
