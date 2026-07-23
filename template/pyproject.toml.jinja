@@ -10,6 +10,8 @@ readme = "README.md"
 authors = [
   { name = "{{ author_name }}", email = "{{ author_email }}" },
 ]
+license = "{{ license }}"
+license-files = ["LICENSE"]
 requires-python = ">={{ python_version }},<4.0"
 dependencies = [
   {%- if with_fastapi_api %}
