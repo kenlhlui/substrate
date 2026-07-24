@@ -1,3 +1,9 @@
+## v2.5.1 (2026-07-24)
+
+### Fix
+
+- pin prek version so that it works in lowest-direct resolution-strategy
+
 ## v2.5.0 (2026-07-23)
 
 ### Feat
